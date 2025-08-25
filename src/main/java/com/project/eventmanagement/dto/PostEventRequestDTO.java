@@ -24,8 +24,7 @@ public class PostEventRequestDTO {
     private LocalDateTime endDateTime;
     @NotNull(message = "Capacity is required")
     private Integer capacity;
-    @NotNull(message = "Organizer Id is required")
-    private int organizer;
+
 
 
 }

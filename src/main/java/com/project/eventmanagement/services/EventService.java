@@ -19,7 +19,12 @@ public interface EventService {
 
     DeleteResponse deleteEventById(Long id);
 
-    EventDTO updateEvent(Long id, @Valid PostEventRequestDTO eventDto);
+    List<EventDTO> getAllEventsForUser();
+    EventDTO getEventByIdForUser(Long id);
 
-    PutResponse addEvent(@Valid PostEventRequestDTO event);
+    DeleteResponse deleteEventByIdForUser(Long id);
+
+    EventDTO updateEventForUser(Long id, @Valid PostEventRequestDTO eventDto);
+
+    PutResponse addEventForUser(@Valid PostEventRequestDTO event);
 }

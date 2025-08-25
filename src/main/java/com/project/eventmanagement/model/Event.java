@@ -10,7 +10,6 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 @Entity
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -37,8 +36,12 @@ public class Event {
 
     private Integer capacity;
 
-    @Column(nullable = false)
-    private int organizer;
+
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "organizer_id",nullable = false )
+
+
+    private User organizer;
 
 
     @CreatedDate

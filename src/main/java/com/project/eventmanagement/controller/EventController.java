@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/events")
+@RequestMapping("/api/v1/admin/events")
 public class EventController {
 
 
@@ -24,7 +24,7 @@ public class EventController {
         this.service = service;
     }
 
-    @GetMapping
+    @GetMapping()
     public ResponseEntity<List<EventDTO>> getAllEvents(){
 
             return  ResponseEntity.status(HttpStatus.OK).body(service.getAllEvents());
@@ -48,19 +48,6 @@ public class EventController {
 
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<EventDTO> updateEvent(@PathVariable Long id , @RequestBody @Valid PostEventRequestDTO eventDto){
-
-        return new ResponseEntity<>(service.updateEvent(id,eventDto),HttpStatus.OK);
-
-    }
-
-    @PostMapping
-    public ResponseEntity<PutResponse> addEvent(@RequestBody @Valid PostEventRequestDTO event){
-
-        return new ResponseEntity(service.addEvent(event),HttpStatus.CREATED);
-
-    }
 
 
 }

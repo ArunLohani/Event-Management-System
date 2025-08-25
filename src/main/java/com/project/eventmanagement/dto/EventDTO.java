@@ -13,16 +13,11 @@ public class EventDTO {
     private Long eventId;
     private String name;
     private String description;
-
-    public void setEventId(Long eventId) {
-        this.eventId = eventId;
-    }
-
     private String location;
     private LocalDateTime startDateTime;
     private LocalDateTime endDateTime;
     private Integer capacity;
-    private int organizer;
+
 
 
 
